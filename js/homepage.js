@@ -1,13 +1,22 @@
+let empPayrollList;
 window.addEventListener('DOMContentLoaded',(event)=>{
+    empPayrollList = getEmployeePayrollDataFromStorage();
+  document.querySelector(".emp-count").textContent = empPayrollList.length;
     createInnerHTML();
 }
 );
+const getEmployeePayrollDataFromStorage = () => {
+    let employeePayrollList = createEmployeePayrollJSON();
+    localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
+    return localStorage.getItem('EmployeePayrollList') ? 
+                        JSON.parse(localStorage.getItem('EmployeePayrollList')) : [];  
+  }
+  
 
 const createInnerHTML =()=>{
     const headerHTML=" <th></th><th>Name</th><th>Gender</th><th>Departments</th><th>Salary</th><th>StartDate</th>";
     let innerHTML=`${headerHTML}`;
-    let employeePayrollList = createEmployeePayrollJSON();
-    for(const employeePayrollData of employeePayrollList ){
+    for(const employeePayrollData of empPayrollList ){
         innerHTML=` ${innerHTML}
                       <tr>
                           <td><img class="profile" src="${employeePayrollData._profilePic}"></td>
