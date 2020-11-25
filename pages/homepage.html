@@ -29,5 +29,34 @@
                 <img src="../assets/add-24px.svg" alt="">Add User</a>
             </div> 
             </div>
-    </body>
+            <div class ="table-main">
+                <table id="display" class="table">
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Departments</th>
+                        <th>Salary</th>
+                        <th>StartDate</th>
+                    </tr>
+                    <tr>
+                        <td><img class="profile" src="../assets/emp1.jpg"></td>
+                        <td>Sameer</td>
+                        <td>Male</td>
+                        <td><div class='dept-label'>Engineering</div>
+                        <div class ='dept-label'>Finance</div></td>
+                        <td>30000</td>
+                        <td>1 Nov 2020</td>
+                        <td>
+                            <img id="1" onclick="remove(this)" alt="delete" src="../assets/delete-black-18dp.svg">
+                            <img id="1" onclick="update(this)" alt="edit" src="../assets/create-black-18dp.svg">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    <script src="../js/utility.js"></script>
+    <script src="../js/site_properties.js"></script>
+    <script src="../js/homepage.js"></script>
+    <script src="../js/EmployeeDetails.js"></script>
+    </body> 
 </html>
